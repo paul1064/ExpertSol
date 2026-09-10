@@ -1,49 +1,71 @@
 ```
-# Dependencies
-.venv/
-venv/
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env.bak/
+.venv/
+
+# Testing
 .coverage
+htmlcov/
+.nosetests
 .coverage.*
 .cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-*.tmp
-*.swp
-*.swo
-.env
-.env.local
-.env.*
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-.mypy_cache/
 .pytest_cache/
-htmlcov/
+.hypothesis/
+
+# Security
+.solcoverjs
 coverage/
 
-# Build and distribution artifacts
-dist/
-build/
-*.egg-info/
-*.egg
-*.so
-*.dylib
-*.dll
-*.exe
-*.out
-*.o
-*.a
-*.obj
+# Environment variables
+.env
+.env.local
+.env.dev
+.env.test
+.env.production
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+julia-*/
+zig*/
 
 # Compressed files
 *.zip
