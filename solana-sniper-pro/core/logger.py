@@ -254,6 +254,7 @@ class Logger:
 _logger: Optional[Logger] = None
 
 
+
 def get_logger() -> Logger:
     """
     Gibt die globale Logger-Instanz zurück.
