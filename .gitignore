@@ -1,49 +1,73 @@
 ```
-# Dependencies
-.venv/
-venv/
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-*.tmp
-*.swp
-*.swo
-.env
-.env.local
-.env.*
-.DS_Store
-Thumbs.db
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# IDE
 .vscode/
 .idea/
-.mypy_cache/
-.pytest_cache/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
 htmlcov/
 coverage/
 
-# Build and distribution artifacts
-dist/
-build/
-*.egg-info/
-*.egg
-*.so
-*.dylib
-*.dll
-*.exe
-*.out
-*.o
-*.a
-*.obj
+# Temporary files
+*.tmp
+*.temp
+
+# Environment files
+.env
+.env.local
+*.env.*
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyTest
+.pytest_cache/
+
+# Build artifacts
+target/
+.out
+.a
+.o
 
 # Compressed files
 *.zip

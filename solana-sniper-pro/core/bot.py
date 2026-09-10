@@ -533,18 +533,19 @@ if __name__ == "__main__":
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
     
-    # Bot erstellen
-    bot = SolanaSniperBot()
-    
-    # Async Main
-    async def main():
-        # Initialisieren
-        if await bot.initialize():
-            # Bot starten
-            await bot.start()
-    
-    # Run
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("\nBot gestoppt")
+    # Bot erstellen (nur wenn als Hauptmodul ausgeführt)
+    if __name__ == "__main__":
+        bot = SolanaSniperBot()
+        
+        # Async Main
+        async def main():
+            # Initialisieren
+            if await bot.initialize():
+                # Bot starten
+                await bot.start()
+        
+        # Run
+        try:
+            asyncio.run(main())
+        except KeyboardInterrupt:
+            print("\nBot gestoppt")

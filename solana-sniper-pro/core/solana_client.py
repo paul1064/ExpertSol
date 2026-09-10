@@ -169,6 +169,9 @@ class SolanaRPCClient:
         # Sortiere nach Priorität
         self.endpoints.sort(key=lambda x: x.priority)
         
+        # Initialisiere current_endpoint vor der ersten Verwendung
+        self.current_endpoint: Optional[RPCEndpoint] = None
+        
         # Wähle ersten gesunden Endpoint
         self._select_best_endpoint()
         
@@ -187,7 +190,7 @@ class SolanaRPCClient:
         
         if not healthy_endpoints:
             # Fallback: Alle Endpoints wieder aktivieren und langsamsten entfernen
-            self.logger.warning("Keine gesunden Endpoints! Setze alle zurück.")
+            logger.warning("Keine gesunden Endpoints! Setze alle zurück.")
             for ep in self.endpoints:
                 ep.is_healthy = True
                 ep.error_count = 0
@@ -201,7 +204,7 @@ class SolanaRPCClient:
         
         if self.current_endpoint != best_endpoint:
             old_name = self.current_endpoint.name if self.current_endpoint else "None"
-            self.logger.info(f"Wechsle RPC Endpoint: {old_name} → {best_endpoint.name}")
+            logger.info(f"Wechsle RPC Endpoint: {old_name} → {best_endpoint.name}")
             self.current_endpoint = best_endpoint
     
     def _get_sync_client(self) -> Client:
