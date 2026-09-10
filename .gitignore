@@ -24,50 +24,48 @@ wheels/
 # Virtual environments
 venv/
 ENV/
-env/
+env.bak/
 .venv/
-.env/
+
+# Testing
+.coverage
+htmlcov/
+.nosetests
+.coverage.*
+.cache
+.pytest_cache/
+.hypothesis/
+
+# Security
+.solcoverjs
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.dev
+.env.test
+.env.production
+*.env
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Logs
-*.log
+*.tmp
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Coverage
-.coverage
-htmlcov/
-coverage/
+# Logs
+*.log
 
-# Temporary files
-*.tmp
-*.temp
-
-# Environment files
-.env
-.env.local
-*.env.*
-
-# MyPy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# PyTest
-.pytest_cache/
-
-# Build artifacts
-target/
-.out
-.a
-.o
+# Dependencies
+node_modules/
+julia-*/
+zig*/
 
 # Compressed files
 *.zip
