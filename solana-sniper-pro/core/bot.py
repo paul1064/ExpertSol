@@ -11,11 +11,28 @@ Integriert alle Komponenten:
 
 import asyncio
 import logging
+import sys
+import os
+from pathlib import Path
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, field
 import signal
-import sys
+from dotenv import load_dotenv
+
+# Lade Environment Variables aus .env Datei
+project_root = Path(__file__).parent.parent
+env_path = project_root / "config" / ".env"
+if env_path.exists():
+    load_dotenv(env_path)
+    logger_info = logging.getLogger("__main__")
+    logger_info.info(f".env Datei geladen von: {env_path}")
+else:
+    print(f"WARNING: .env Datei nicht gefunden unter {env_path}")
+
+# Füge das Projekt-Root-Verzeichnis zum Python-Pfad hinzu
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
 
 from security.wallet_manager import SecureKeyManager, WalletBalanceChecker
 from core.solana_client import SolanaRPCClient
