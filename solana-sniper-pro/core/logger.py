@@ -254,12 +254,10 @@ class Logger:
 _logger: Optional[Logger] = None
 
 
-def get_logger(category: str = "GENERAL") -> Logger:
+
+def get_logger() -> Logger:
     """
-    Gibt die globale Logger-Instanz zurück oder erstellt eine neue mit Kategorie.
-    
-    Args:
-        category: Log-Kategorie (optional)
+    Gibt die globale Logger-Instanz zurück.
     
     Returns:
         Logger-Instanz
